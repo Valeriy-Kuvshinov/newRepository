@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MineSweeper - But Egyptian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onInit()">
+    <img class="background-image" src="images/egypttwo.jpg" alt="">
+
+    <div class="content">
+        <h2>MummySweeper</h2>
+        <br>
+        <div class="level-selection">
+            <button>Beginner</button> <button>Medium</button> <button>Expert</button>
+        </div>
+        <div class="info-box">
+            <h3>Mummies Left: </h3>
+            <h3>Seconds: </h3>
+        </div>
+        <br>
+        <div class="board-container"
+            onclick="onCellClicked(event.target, parseInt(event.target.dataset.i), parseInt(event.target.dataset.j))">
+        </div>
+        <br>
+    </div>
+    <br>
+
+    <footer>
+        <h3>All rights belong to Valeriy Kuvshinov</h3>
+        <h3>The page's music has been brought to you by Nebuchadnezzar</h3>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

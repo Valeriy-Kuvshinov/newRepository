@@ -12,27 +12,61 @@
 <body onload="onInit()">
     <img class="background-image" src="images/egypttwo.jpg" alt="">
 
+    <header>
+        <div class="title">
+            <img class="title-icon" src="images/pharaoh.png" alt="">
+            <h2>MummySweeper</h2>
+            <img class="title-icon" src="images/pharaoh.png" alt="">
+        </div>
+    </header>
+
+    <br>
+
     <div class="content">
-        <h2>MummySweeper</h2>
-        <br>
-        <div class="level-selection">
-            <button>Beginner</button> <button>Medium</button> <button>Expert</button>
+        <div class="level-selection" style="background-image: url('images/bricks.jpeg');">
+            <button class="level-one-button" onclick="onSelectLevel(1)">Beginner</button>
+            <button class="level-two-button" onclick="onSelectLevel(2)">Medium</button>
+            <button class="level-three-button" onclick="onSelectLevel(3)">Expert</button>
         </div>
-        <div class="info-box">
-            <h3>Mummies Left: </h3>
-            <h3>Seconds: </h3>
+
+        <div class="info-box" style="background-image: url('images/makebricks.jpeg');">
+
+            <div class="info-column">
+                <h3 class="mummies-info">Mummies: </h3>
+                <div class="mummies-counter">0</div>
+            </div>
+
+            <div class="info-column">
+                <h3 class="lives-info">Lives: </h3>
+                <button class="life-status-info"></button>
+            </div>
+
+            <div class="info-column">
+                <h3 class="time-info">Seconds: </h3>
+                <div class="seconds-counter">0</div>
+            </div>
         </div>
-        <br>
+
         <div class="board-container"
             onclick="onCellClicked(event.target, parseInt(event.target.dataset.i), parseInt(event.target.dataset.j))">
         </div>
-        <br>
     </div>
-    <br>
+
+    <div class="win-screen">
+        <h2>You Won! 🏆</h2>
+        <h3>You have cleaned the pyramid of mummies!</h3>
+        <button onclick="onCloseVictory()">Onwards, to the next adventure!</button>
+    </div>
+
+    <div class="lose-screen">
+        <h2>You Lose! 🧟‍♂️</h2>
+        <h3>You have been consumed by the mummies!</h3>
+        <button onclick="onCloseLose()">Cya in the next life.</button>
+    </div>
 
     <footer>
-        <h3>All rights belong to Valeriy Kuvshinov</h3>
-        <h3>The page's music has been brought to you by Nebuchadnezzar</h3>
+        <h3 class="rights">All rights belong to Valeriy Kuvshinov.</h3>
+        <h3 class="credit">The page's music has been brought to you by Nebuchadnezzar.</h3>
     </footer>
 
     <script src="js/utils.js"></script>

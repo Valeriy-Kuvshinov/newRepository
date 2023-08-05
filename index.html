@@ -23,45 +23,76 @@
     <br>
 
     <div class="content">
-        <div class="level-selection" style="background-image: url('images/bricks.jpeg');">
-            <button class="level-one-button" onclick="onSelectLevel(1)">Beginner</button>
-            <button class="level-two-button" onclick="onSelectLevel(2)">Medium</button>
-            <button class="level-three-button" onclick="onSelectLevel(3)">Expert</button>
+        <div class="controls-info-wrapper">
+            <div class="sidebar-one">
+                <div class="bonus-options-one" style="background-image: url('images/egypt.webp');">
+                    <div class="option-group-one">
+                        <button class="mummy-sweeper" onclick="onMineExterminator()">Mummy Sweeper</button>
+                        <h3 class="mummy-sweeper-info">(up to 3 mummies)</h3>
+                    </div>
+                    <div class="option-group-one">
+                        <button class="safe-click" onclick="onSafeClick()">Safe Click</button>
+                        <h3 class="safe-click-info">3 clicks remaining</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="level-selection" style="background-image: url('images/bricks.jpeg');">
+                    <button class="level-one-button" onclick="onSelectLevel(1)">Beginner</button>
+                    <button class="level-two-button" onclick="onSelectLevel(2)">Medium</button>
+                    <button class="level-three-button" onclick="onSelectLevel(3)">Expert</button>
+                </div>
+
+                <div class="info-box" style="background-image: url('images/makebricks.jpeg');">
+                    <div class="info-column">
+                        <h3 class="mummies-info">Mummies: </h3>
+                        <div class="mummies-counter">0</div>
+                    </div>
+
+                    <div class="info-column">
+                        <h3 class="lives-info">Lives: </h3>
+                        <button class="life-status-info" onclick="onRestart()"></button>
+                    </div>
+
+                    <div class="info-column">
+                        <h3 class="time-info">Seconds: </h3>
+                        <div class="seconds-counter">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-two">
+                <div class="bonus-options-two" style="background-image: url('images/egypt3.jpg');">
+                    <div class="option-group-two">
+                        <h3 class="mummy-high-score-text">Most mummies in level wiped:</h3>
+                        <h3 class="mummy-high-score-info">0</h3>
+                        <h3 class="best-time-text">Fastest game:</h3>
+                        <h3 class="best-time-score">0</h3>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="info-box" style="background-image: url('images/makebricks.jpeg');">
-
-            <div class="info-column">
-                <h3 class="mummies-info">Mummies: </h3>
-                <div class="mummies-counter">0</div>
+        <div class="game-content">
+            <div class="board-container"
+                onclick="onCellClicked(event.target, parseInt(event.target.dataset.i), parseInt(event.target.dataset.j))">
             </div>
-
-            <div class="info-column">
-                <h3 class="lives-info">Lives: </h3>
-                <button class="life-status-info"></button>
-            </div>
-
-            <div class="info-column">
-                <h3 class="time-info">Seconds: </h3>
-                <div class="seconds-counter">0</div>
-            </div>
-        </div>
-
-        <div class="board-container"
-            onclick="onCellClicked(event.target, parseInt(event.target.dataset.i), parseInt(event.target.dataset.j))">
         </div>
     </div>
 
     <div class="win-screen">
         <h2>You Won! 🏆</h2>
         <h3>You have cleaned the pyramid of mummies!</h3>
+        <br>
         <button onclick="onCloseVictory()">Onwards, to the next adventure!</button>
     </div>
 
     <div class="lose-screen">
         <h2>You Lose! 🧟‍♂️</h2>
         <h3>You have been consumed by the mummies!</h3>
-        <button onclick="onCloseLose()">Cya in the next life.</button>
+        <br>
+        <button onclick="onCloseLose()">See you in the next life.</button>
     </div>
 
     <footer>
